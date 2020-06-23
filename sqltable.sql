@@ -3,7 +3,7 @@ CREATE TABLE userdata (
   email VARCHAR(60),
   firstName VARCHAR(30),
   lastName VARCHAR(30),
-  dateOfAccident VARCHAR(20),
+  dateOfAccident DATE,
   numOfVisitsToRehab INT,
   timeAtRehabInHours INT,
   timeDrivingtoRehabPerAVisitRndTrip INT,
@@ -11,11 +11,11 @@ CREATE TABLE userdata (
   timeAtAccident INT,
   timeRentingACar INT,
   timeDoingRehabPerADay INT,
-  dateRehabIsFinished VARCHAR(20),
-  hourlyWageForOccupation FLOAT,
+  dateRehabIsFinished DATE,
+  hourlyWageForOccupation INT,
   age INT
 );
-
+-- remove dates
 
 
 INSERT INTO USERDATA (firstName, email)

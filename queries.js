@@ -30,10 +30,10 @@ const getUserById = (request, response) => {
 
 
 const createUser = (request, response) => {
-  const { email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age } = request.body;
-
-  pool.query('INSERT INTO userdata (email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)',
-   [email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age], (error, result) => {
+  const { email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age } = request.body.values;
+  console.log('email',request.body.values.email,'request',request.body);
+    pool.query('INSERT INTO userdata (email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)',
+    [email, firstName, lastName, dateOfAccident, numOfVisitsToRehab, timeAtRehabInHours, timeDrivingtoRehabPerAVisitRndTrip, timeWithAtty, timeAtAccident, timeRentingACar, timeDoingRehabPerADay,dateRehabIsFinished, hourlyWageForOccupation, age], (error, result) => {
     if (error) {
       throw error
     }
