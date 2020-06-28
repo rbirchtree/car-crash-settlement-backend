@@ -6,9 +6,7 @@ const port = process.env.port || 5000;
 const db = require('./queries')
 const cors = require('cors');
 
-app.use(cors({
-  origin: 'http://localhost:3000'
-}));
+app.use(cors());
 
 
 app.use(bodyParser.json())
