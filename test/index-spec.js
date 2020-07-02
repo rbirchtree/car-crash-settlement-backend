@@ -21,4 +21,15 @@ describe("Home",function(){
         return closeServer();
       });
 
-})
+      it("should list items on GET", function() {
+        return chai
+          .request(app)
+          .get("/data")
+          .then(function(res) {
+            expect(res).to.have.status(200);
+            expect(res).to.be.json;
+            expect(res.body).to.be.a("array");
+            expect(res.body.length).to.be.above(0);
+            });
+          });
+});
